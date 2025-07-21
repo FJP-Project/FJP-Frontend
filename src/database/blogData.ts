@@ -24,7 +24,7 @@ export const blogDatas: BlogData[] = [
   },
   {
     id: 2,
-    title: "Model Kitchen Set Minimalis untuk Dapur kecil",
+    title: "Kitchen Set Minimalis untuk Dapur kecil",
     shortDescription: "Temukan solusi kitchen set minimalis dengan ACP yang cocok untuk dapur kecil.",
     fullDescription: "Solusi interior terbaik dengan panel ACP premium untuk menciptakan ruang dapur yang profesional dan estetis. Kitchen set minimalis menjadi pilihan tepat untuk dapur kecil karena desainnya yang efisien namun tetap stylish. Dalam artikel lengkap ini kami akan menunjukkan berbagai model kitchen set minimalis terbaru yang cocok untuk ruang terbatas, termasuk tips memilih warna ACP yang tepat untuk kesan lebih luas, tata letak yang ergonomis, dan kombinasi material yang tahan lama. Kami juga akan membahas keunggulan menggunakan ACP untuk kabinet dapur dibanding material konvensional, seperti ketahanan terhadap kelembaban, mudah dibersihkan, serta variasi warna dan tekstur yang lebih banyak.",
     category: "Interior",

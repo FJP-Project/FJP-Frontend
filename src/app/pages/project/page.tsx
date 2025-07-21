@@ -2,8 +2,12 @@
 
 import React from 'react';
 import { Hammer } from 'lucide-react';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const ProjectPage: React.FC = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const router = useRouter();
   return (
     <div className="h-screen bg-gray-50">
       <section className="h-screen relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-42 md:py-52 overflow-hidden">
@@ -26,6 +30,12 @@ const ProjectPage: React.FC = () => {
           <p className="text-sm md:text-base lg:text-lg xl:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed mb-8">
             Kami telah menangani berbagai proyek fasad bangunan dengan hasil yang presisi, estetis, dan sesuai kebutuhan klien.
           </p>
+          <button
+          onClick={() => router.push(`/pages/catalogProject`)}
+          className='py-4 px-5 bg-[#FFB629] rounded-md cursor-pointer hover:bg-yellow-500'
+          >
+            Lihat Catalog Project
+          </button>
         </div>
       </section>
     </div>
