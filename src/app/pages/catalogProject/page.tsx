@@ -38,7 +38,7 @@ const CatalogProjectCatalog = () => {
             <span className="text-xs sm:text-sm md:text-base font-medium">Gallery Project Kami</span>
           </div>
           <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-6 bg-gradient-to-r from-[#FFB629] via-[#FFDA56] to-[#FFD7A6] bg-clip-text text-transparent leading-tight">
-            Galeri Proyek ACP Premium
+            Galeri Project Kami
           </h1>
           <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed mb-6 sm:mb-8">
             Temukan inspirasi dari koleksi proyek desain interior dan eksterior terbaik kami

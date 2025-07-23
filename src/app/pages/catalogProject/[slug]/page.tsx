@@ -92,7 +92,7 @@ const CatalogProjectDetail = () => {
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Memuat detail proyek...</p>
+          <p className="text-gray-600">Memuat detail Project...</p>
         </div>
       </div>
     );
@@ -105,9 +105,9 @@ const CatalogProjectDetail = () => {
           <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <Building2 className="w-8 h-8 text-gray-500" />
           </div>
-          <h1 className="text-2xl font-bold text-white mb-4">Proyek Tidak Ditemukan</h1>
+          <h1 className="text-2xl font-bold text-white mb-4">Project Tidak Ditemukan</h1>
           <p className="text-white mb-6">
-            Maaf, proyek yang Anda cari tidak dapat ditemukan atau mungkin sudah tidak tersedia.
+            Maaf, Project yang Anda cari tidak dapat ditemukan atau mungkin sudah tidak tersedia.
           </p>
         </div>
       </div>
@@ -227,12 +227,12 @@ const CatalogProjectDetail = () => {
                 <button
                   onClick={() => router.push('/pages/contact')}
                   className="flex-1 cursor-pointer bg-gradient-to-r from-yellow-400 to-yellow-500 text-black py-3 px-6 rounded-md font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 text-center" >
-                  Konsultasi Proyek Serupa
+                  Konsultasi Project Serupa
                 </button>
                 <button
                   onClick={() => router.push('/pages/catalogProject')}
                   className="flex-1 cursor-pointer bg-gray-900 text-white py-3 px-6 rounded-md font-semibold hover:bg-gray-800 transition-colors duration-200 text-center">
-                  Lihat Proyek Lainnya
+                  Lihat Project Lainnya
                 </button>
               </div>
             </div>
@@ -245,7 +245,7 @@ const CatalogProjectDetail = () => {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sm:p-8 md:p-10">
             <div className="flex items-center gap-2 mb-6">
               <Info className="w-5 h-5 text-yellow-600" />
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Detail Proyek</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Detail Project</h2>
             </div>
 
             <div className="prose prose-gray max-w-none">
@@ -255,7 +255,7 @@ const CatalogProjectDetail = () => {
 
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-md">
                 <p className="text-sm text-yellow-800">
-                  <strong>Catatan:</strong> Setiap proyek dirancang khusus sesuai kebutuhan dan preferensi klien.
+                  <strong>Catatan:</strong> Setiap Project dirancang khusus sesuai kebutuhan dan preferensi klien.
                   Hasil akhir dapat bervariasi tergantung spesifikasi material dan kondisi lokasi.
                 </p>
               </div>
@@ -268,7 +268,7 @@ const CatalogProjectDetail = () => {
         <section className="py-12 sm:py-16">
           <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
-              Proyek Serupa
+              Project Serupa
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

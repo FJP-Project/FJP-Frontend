@@ -201,11 +201,7 @@ const BlogPage = () => {
         <section className="py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-left mb-16">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-md px-6 py-3 mb-6 border border-yellow-200">
-                <Sparkles className="w-5 h-5 text-yellow-600" />
-                <span className="text-sm font-bold text-yellow-800">Artikel Terbaru</span>
-              </div>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-6">
                 Konten Terbaru Kami
               </h2>
               <div className="h-1.5 w-32 bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-400 rounded-full mb-6" />

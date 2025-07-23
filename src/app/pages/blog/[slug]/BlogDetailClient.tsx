@@ -161,7 +161,7 @@ const BlogDetailPage = ({ params }: BlogDetailPageProps) => {
                 <div className="flex items-center gap-4 text-sm text-gray-600">
                   <div className="flex items-center gap-2">
                     <Eye className="w-4 h-4" />
-                    <span>1.2k views</span>
+                    <span>{article.title}</span>
                   </div>
                 </div>
                 <button
@@ -180,9 +180,6 @@ const BlogDetailPage = ({ params }: BlogDetailPageProps) => {
                     className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl shadow-lg"
                     loading="lazy"
                   />
-                  <figcaption className="text-sm text-gray-500 text-center mt-3">
-                    {article.title}
-                  </figcaption>
                 </figure>
               </div>
 
