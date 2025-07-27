@@ -84,7 +84,17 @@
     "scrollbarSlider.background": "#000000",
     "scrollbarSlider.hoverBackground": "#000000",
     "editor.lineHighlightBackground": "#000000",
-    "statusBar.noFolderBackground": "#000000"
+    "statusBar.noFolderBackground": "#000000",
+    "titleBar.activeBackground": "#000000",
+    "titleBar.inactiveBackground": "#000000",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveForeground": "#aaaaaa",
+    "statusBar.background": "#000000",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingBackground": "#000000",
+    "statusBar.noFolderForeground": "#ffffff",
+    "statusBarItem.remoteBackground": "#000000",
+    "statusBarItem.remoteForeground": "#ffffff",
   },
 
   // ==================== CODE INTELLIGENCE ====================
