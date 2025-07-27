@@ -4,16 +4,19 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-interface PageProps {
-  params: { 
-    slug: string 
-  };
-  searchParams?: { 
-    [key: string]: string | string[] | undefined 
-  };
-}
+type PageParams = {
+  slug: string;
+};
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+type PageSearchParams = {
+  [key: string]: string | string[] | undefined;
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: PageParams;
+}): Promise<Metadata> {
   const { slug } = params;
   const article = blogDatas.find((item) => item.slug === slug);
 
@@ -56,7 +59,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<PageParams[]> {
   return blogDatas.map((article) => ({
     slug: article.slug,
   }));
@@ -118,7 +121,12 @@ const ArticleCard = ({ article }: { article: typeof blogDatas[0] }) => {
   );
 };
 
-export default function BlogDetailPage({ params }: PageProps) {
+export default function BlogDetailPage({
+  params,
+}: {
+  params: PageParams;
+  searchParams?: PageSearchParams;
+}) {
   const { slug } = params;
   const article = blogDatas.find((item) => item.slug === slug);
 
