@@ -1,7 +1,7 @@
 'use client'
 
-import React from 'react';
 import { Star } from 'lucide-react';
+import React from 'react';
 
 const HomePage: React.FC = () => {
   return (

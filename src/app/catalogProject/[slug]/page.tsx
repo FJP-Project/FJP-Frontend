@@ -1,23 +1,20 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useRouter, useParams } from 'next/navigation';
+import { catalogData, CatalogProject } from '@/database/catalogData';
 import {
-  ArrowLeft,
-  MapPin,
-  Calendar,
-  User,
   Building2,
-  Share2,
-  Download,
-  ExternalLink,
+  Calendar,
   ChevronLeft,
   ChevronRight,
-  X,
+  ExternalLink,
+  Info,
+  MapPin,
   Maximize2,
-  Info
+  User,
+  X
 } from 'lucide-react';
-import { catalogData, CatalogProject } from '@/database/catalogData';
+import { useParams, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const CatalogProjectDetail = () => {
   const router = useRouter();
@@ -225,12 +222,12 @@ const CatalogProjectDetail = () => {
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
-                  onClick={() => router.push('/pages/contact')}
+                  onClick={() => router.push('/contact')}
                   className="flex-1 cursor-pointer bg-gradient-to-r from-yellow-400 to-yellow-500 text-black py-3 px-6 rounded-md font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-200 text-center" >
                   Konsultasi Project Serupa
                 </button>
                 <button
-                  onClick={() => router.push('/pages/catalogProject')}
+                  onClick={() => router.push('/catalogProject')}
                   className="flex-1 cursor-pointer bg-gray-900 text-white py-3 px-6 rounded-md font-semibold hover:bg-gray-800 transition-colors duration-200 text-center">
                   Lihat Project Lainnya
                 </button>
@@ -313,7 +310,7 @@ const CatalogProjectDetail = () => {
                       </div>
 
                       <button
-                        onClick={() => router.push(`/pages/catalogProject/${relatedCatalogProject.slug}`)}
+                        onClick={() => router.push(`/catalogProject/${relatedCatalogProject.slug}`)}
                         className="w-full bg-gray-900 cursor-pointer text-white py-2 px-4 rounded-md text-sm font-semibold hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-500 hover:text-black flex items-center justify-center gap-2 transition-all duration-200">
                         Lihat Detail
                         <ExternalLink className="w-4 h-4" />

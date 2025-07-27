@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
       images: [article.imageUrl],
     },
     alternates: {
-      canonical: `/pages/blog/${slug}`,
+      canonical: `/blog/${slug}`,
     },
   };
 }
@@ -107,7 +107,7 @@ const BlogDetailPage = ({ params }: BlogDetailPageProps) => {
             "dateModified": article.date,
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `/pages/blog/${slug}`
+              "@id": `/blog/${slug}`
             }
           })
         }}
@@ -228,7 +228,7 @@ const BlogDetailPage = ({ params }: BlogDetailPageProps) => {
                     Temukan artikel menarik lainnya yang mungkin Anda sukai
                   </p>
                 </div>
-                <Link href="/pages/blog">
+                <Link href="/blog">
                   <button className="bg-yellow-400 hover:bg-yellow-500 cursor-pointer text-black px-5 py-2 rounded-lg font-medium flex items-center gap-2 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-300">
                     Semua Artikel
                     <ChevronRight className="w-4 h-4" />
@@ -290,7 +290,7 @@ const ArticleCard = ({ article }: { article: typeof blogDatas[0] }) => {
             </div>
 
             <Link
-              href={`/pages/blog/${article.slug}`}
+              href={`/blog/${article.slug}`}
               className="self-start cursor-pointer bg-gray-900 text-white py-3 px-6 rounded-md text-sm font-semibold hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-500 hover:text-black flex items-center gap-2 group transition-all duration-200"
               aria-label={`Baca selengkapnya tentang ${article.title}`}>
               Baca Artikel Lengkap

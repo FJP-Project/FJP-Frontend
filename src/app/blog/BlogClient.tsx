@@ -1,24 +1,19 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import {
-  Newspaper,
-  Search,
-  CalendarDays,
-  User,
   ArrowRight,
-  Filter,
   BookOpen,
-  Clock,
-  TrendingUp,
+  CalendarDays,
+  Filter,
   Grid3X3,
   List,
-  Tag,
-  Eye,
+  Search,
   Star,
-  Sparkles
+  Tag,
+  User
 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 import { blogDatas } from '@/database/blogData';
 
@@ -344,7 +339,7 @@ const LatestArticleCard = ({ article, index }: LatestArticleCardProps) => {
           </p>
 
           <button
-            onClick={() => router.push(`/pages/blog/${article.slug}`)}
+            onClick={() => router.push(`/blog/${article.slug}`)}
             className="w-full cursor-pointer bg-gradient-to-r from-gray-900 to-gray-800 text-white py-3 px-4 rounded-md text-sm font-semibold hover:from-yellow-400 hover:to-yellow-500 hover:text-black flex items-center justify-center gap-2 group transition-all duration-300 shadow-md hover:shadow-lg"
             aria-label={`Baca selengkapnya tentang ${article.title}`}>
             Baca Artikel
@@ -397,7 +392,7 @@ const ArticleGridCard = ({ article }: ArticleCardProps) => {
           </p>
 
           <button
-            onClick={() => router.push(`/pages/blog/${article.slug}`)}
+            onClick={() => router.push(`/blog/${article.slug}`)}
             className="cursor-pointer w-full bg-gray-900 text-white py-3 px-4 rounded-md text-sm font-semibold hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-500 hover:text-black flex items-center justify-center gap-2 group transition-all duration-200"
             aria-label={`Baca selengkapnya tentang ${article.title}`}>
             Baca Artikel
@@ -453,7 +448,7 @@ const ArticleListCard = ({ article }: ArticleCardProps) => {
             </div>
 
             <button
-              onClick={() => router.push(`/pages/blog/${article.slug}`)}
+              onClick={() => router.push(`/blog/${article.slug}`)}
               className="self-start cursor-pointer bg-gray-900 text-white py-3 px-6 rounded-md text-sm font-semibold hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-500 hover:text-black flex items-center gap-2 group transition-all duration-200"
               aria-label={`Baca selengkapnya tentang ${article.title}`}>
               Baca Artikel Lengkap

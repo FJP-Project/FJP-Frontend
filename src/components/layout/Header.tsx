@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,11 +12,11 @@ const Header = () => {
 
   const navItems = [
     { href: '/', label: 'Home' },
-    { href: '/pages/about', label: 'Tentang' },
-    { href: '/pages/project', label: 'Proyek Kami' },
-    { href: '/pages/product', label: 'Produk Kami' },
-    { href: '/pages/blog', label: 'Blog' },
-    { href: '/pages/contact', label: 'Contact' }
+    { href: '/about', label: 'Tentang' },
+    { href: '/project', label: 'Proyek Kami' },
+    { href: '/product', label: 'Produk Kami' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/contact', label: 'Contact' }
   ];
 
   useEffect(() => {

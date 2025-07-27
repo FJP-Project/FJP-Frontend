@@ -234,7 +234,7 @@ const CatalogProjectGridCard = ({ CatalogProject, router }: CatalogProjectCardPr
           </div>
 
           <button
-            onClick={() => router.push(`/pages/catalogProject/${CatalogProject.slug}`)}
+            onClick={() => router.push(`/catalogProject/${CatalogProject.slug}`)}
             className="w-full bg-gray-900 cursor-pointer text-white py-2 sm:py-3 px-3 sm:px-4 rounded-sm md:rounded-md text-xs sm:text-sm font-semibold hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-500 hover:text-black flex items-center justify-center gap-1 sm:gap-2 group transition-all duration-200"
             aria-label={`Lihat detail proyek ${CatalogProject.title}`}>
             Lihat Detail
@@ -298,7 +298,7 @@ const CatalogProjectListCard = ({ CatalogProject, router }: CatalogProjectCardPr
             </div>
 
             <button
-              onClick={() => router.push(`/pages/catalogProject/${CatalogProject.slug}`)}
+              onClick={() => router.push(`/catalogProject/${CatalogProject.slug}`)}
               className="self-start bg-gray-900 cursor-pointer text-white py-2 sm:py-3 px-4 sm:px-6 rounded-sm md:rounded-md text-xs sm:text-sm font-semibold hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-500 hover:text-black flex items-center gap-1 sm:gap-2 group transition-all duration-200"
               aria-label={`Lihat detail proyek ${CatalogProject.title}`}>
               Lihat Detail Proyek

@@ -1,5 +1,5 @@
-import ContactClient from './ContactClient'
 import { Metadata } from 'next';
+import ContactClient from './ContactClient';
 
 export const metadata: Metadata = {
   title: 'Kontak Kami - Hubungi Tim Support 24/7 | Nama Perusahaan',

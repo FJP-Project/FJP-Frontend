@@ -1,9 +1,9 @@
 'use client'
 
+import { Clock, Headphones, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import React from 'react';
-import { Mail, Phone, MapPin, MessageCircle, Clock, Star, Shield, Headphones } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../../components/ui/card';
-import { Button } from '../../../components/ui/button';
+import { Button } from '../../components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/ui/card';
 
 const ContactClient: React.FC = () => {
   return (
