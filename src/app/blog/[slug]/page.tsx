@@ -1,5 +1,11 @@
 import BlogDetailClient from './BlogDetailClient';
 
-export default function Page({ params }: { params: { slug: string } }) {
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default function Page({ params }: PageProps) {
   return <BlogDetailClient params={params} />;
 }
