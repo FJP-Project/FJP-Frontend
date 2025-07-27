@@ -1,8 +1,8 @@
+import { blogDatas } from '@/database/blogData';
+import { ArrowRight, Calendar, ChevronRight, Clock, Eye, Share2, Tag, User } from 'lucide-react';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Metadata } from 'next';
-import { Calendar, User, Share2, Newspaper, ChevronRight, ArrowRight, Clock, Eye, Tag } from 'lucide-react';
-import { blogDatas } from '@/database/blogData';
 
 interface BlogDetailPageProps {
   params: {

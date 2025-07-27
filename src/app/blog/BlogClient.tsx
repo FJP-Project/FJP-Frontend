@@ -138,7 +138,7 @@ const BlogPage = () => {
                   </select>
                 </div>
 
-                <div className="hidden sm:block sm:flex bg-gray-100 rounded-xl p-1">
+                <div className="hidden sm:flex bg-gray-100 rounded-xl p-1">
                   <button
                     onClick={() => setViewMode('grid')}
                     className={`p-3 rounded-lg transition-all duration-200 ${
