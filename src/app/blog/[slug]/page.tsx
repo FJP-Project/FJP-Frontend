@@ -4,13 +4,16 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-interface BlogDetailPageProps {
-  params: {
-    slug: string;
+interface PageProps {
+  params: { 
+    slug: string 
+  };
+  searchParams?: { 
+    [key: string]: string | string[] | undefined 
   };
 }
 
-export async function generateMetadata({ params }: BlogDetailPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = params;
   const article = blogDatas.find((item) => item.slug === slug);
 
@@ -68,7 +71,8 @@ const ArticleCard = ({ article }: { article: typeof blogDatas[0] }) => {
             src={article.imageUrl}
             alt={article.title}
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-            loading="lazy"/>
+            loading="lazy"
+          />
           <div className="absolute top-4 left-4">
             <span className="px-3 py-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black text-xs font-bold rounded-full">
               {article.category}
@@ -102,7 +106,8 @@ const ArticleCard = ({ article }: { article: typeof blogDatas[0] }) => {
             <Link
               href={`/blog/${article.slug}`}
               className="self-start cursor-pointer bg-gray-900 text-white py-3 px-6 rounded-md text-sm font-semibold hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-500 hover:text-black flex items-center gap-2 group transition-all duration-200"
-              aria-label={`Baca selengkapnya tentang ${article.title}`}>
+              aria-label={`Baca selengkapnya tentang ${article.title}`}
+            >
               Baca Artikel Lengkap
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -113,7 +118,7 @@ const ArticleCard = ({ article }: { article: typeof blogDatas[0] }) => {
   );
 };
 
-const BlogDetailPage = ({ params }: BlogDetailPageProps) => {
+export default function BlogDetailPage({ params }: PageProps) {
   const { slug } = params;
   const article = blogDatas.find((item) => item.slug === slug);
 
@@ -127,9 +132,10 @@ const BlogDetailPage = ({ params }: BlogDetailPageProps) => {
 
   if (relatedArticles.length < 3) {
     const additionalArticles = blogDatas
-      .filter((item) =>
-        item.id !== article.id &&
-        !relatedArticles.some(related => related.id === item.id)
+      .filter(
+        (item) =>
+          item.id !== article.id &&
+          !relatedArticles.some((related) => related.id === item.id)
       )
       .slice(0, 3 - relatedArticles.length);
 
@@ -220,7 +226,8 @@ const BlogDetailPage = ({ params }: BlogDetailPageProps) => {
                 </div>
                 <button
                   className="bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-300"
-                  aria-label="Bagikan artikel ini">
+                  aria-label="Bagikan artikel ini"
+                >
                   <Share2 className="w-4 h-4" />
                   Bagikan
                 </button>
@@ -239,13 +246,14 @@ const BlogDetailPage = ({ params }: BlogDetailPageProps) => {
 
               <div className="prose prose-lg max-w-none">
                 <div className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                  {article.fullDescription.split('\n').map((paragraph, index) => (
-                    paragraph.trim() && (
-                      <p key={index} className="mb-4">
-                        {paragraph.trim()}
-                      </p>
-                    )
-                  ))}
+                  {article.fullDescription.split('\n').map(
+                    (paragraph, index) =>
+                      paragraph.trim() && (
+                        <p key={index} className="mb-4">
+                          {paragraph.trim()}
+                        </p>
+                      )
+                  )}
                 </div>
               </div>
 
@@ -301,6 +309,4 @@ const BlogDetailPage = ({ params }: BlogDetailPageProps) => {
       </div>
     </>
   );
-};
-
-export default BlogDetailPage;
+}
