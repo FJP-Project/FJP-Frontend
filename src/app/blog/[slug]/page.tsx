@@ -4,19 +4,24 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-type PageParams = {
+interface BlogPost {
+  id: string;
   slug: string;
-};
+  title: string;
+  shortDescription: string;
+  fullDescription: string;
+  category: string;
+  author: string;
+  date: string;
+  imageUrl: string;
+}
 
-type PageSearchParams = {
-  [key: string]: string | string[] | undefined;
-};
+interface PageProps {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
 
-export async function generateMetadata({
-  params,
-}: {
-  params: PageParams;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = params;
   const article = blogDatas.find((item) => item.slug === slug);
 
@@ -35,14 +40,12 @@ export async function generateMetadata({
     openGraph: {
       title: article.title,
       description: article.shortDescription,
-      images: [
-        {
-          url: article.imageUrl,
-          width: 1200,
-          height: 630,
-          alt: article.title,
-        },
-      ],
+      images: [{
+        url: article.imageUrl,
+        width: 1200,
+        height: 630,
+        alt: article.title,
+      }],
       type: 'article',
       publishedTime: article.date,
       authors: [article.author],
@@ -59,13 +62,13 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<PageParams[]> {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return blogDatas.map((article) => ({
     slug: article.slug,
   }));
 }
 
-const ArticleCard = ({ article }: { article: typeof blogDatas[0] }) => {
+const ArticleCard = ({ article }: { article: BlogPost }) => {
   return (
     <article className="bg-white rounded-xl overflow-hidden shadow-md border border-gray-200 hover:shadow-xl hover:border-yellow-300 transition-all duration-300 transform hover:-translate-y-1">
       <div className="flex flex-col h-full">
@@ -121,12 +124,7 @@ const ArticleCard = ({ article }: { article: typeof blogDatas[0] }) => {
   );
 };
 
-export default function BlogDetailPage({
-  params,
-}: {
-  params: PageParams;
-  searchParams?: PageSearchParams;
-}) {
+export default function BlogDetailPage({ params }: PageProps) {
   const { slug } = params;
   const article = blogDatas.find((item) => item.slug === slug);
 
@@ -140,10 +138,9 @@ export default function BlogDetailPage({
 
   if (relatedArticles.length < 3) {
     const additionalArticles = blogDatas
-      .filter(
-        (item) =>
-          item.id !== article.id &&
-          !relatedArticles.some((related) => related.id === item.id)
+      .filter((item) => 
+        item.id !== article.id &&
+        !relatedArticles.some((related) => related.id === item.id)
       )
       .slice(0, 3 - relatedArticles.length);
 
@@ -305,12 +302,14 @@ export default function BlogDetailPage({
                   </button>
                 </Link>
               </div>
-
+              
+              {/* 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 {relatedArticles.map((relatedArticle) => (
                   <ArticleCard key={relatedArticle.id} article={relatedArticle} />
                 ))}
-              </div>
+              </div> */
+              }
             </div>
           </div>
         </section>
